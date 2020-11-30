@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-debugger */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -15,7 +16,7 @@ function requestUserError(error) {
   };
 }
 
-export default function requestUser(userId) {
+export function requestUser(userId) {
   return async (dispatch) => {
     const endpoint = `http://localhost:3020/user/${userId}`;
     try {

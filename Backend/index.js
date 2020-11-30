@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 const database = process.env.spotsDB || 'mongodb://localhost/spotshoveit';
 connect('mongodb://localhost/spotshoveit');
-app.use('/', userRoutes);
+app.use('/user', userRoutes);
 
 app.listen(port, () => {
   console.log(`server is running on por ${port}`);

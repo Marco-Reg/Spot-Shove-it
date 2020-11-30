@@ -3,13 +3,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import requestUser from '../../redux/actions/userActions';
+import { requestUser } from '../../redux/actions/userActions';
 import './userDetail.css';
 
 function UserDetail({ user, dispatch }) {
   const { userId } = useParams();
   useEffect(() => {
-    if (!user || user.length !== 0) {
+    if (!user || !user.name) {
       dispatch(requestUser(userId));
     }
   }, []);

@@ -2,13 +2,18 @@
 import actionTypes from '../actions/actionTypes';
 
 export default function userReducer(state = {}, action) {
+  let newState = null;
   switch (action.type) {
     case actionTypes.LOAD_USER:
-
-      return { ...state, user: action.user };
+      newState = { ...state, user: action.user };
+      debugger;
+      break;
     case actionTypes.LOAD_USER_ERROR:
-      return { ...state, error: action.error };
+      newState = { ...state, error: action.error };
+      break;
     default:
-      return state;
+      newState = state;
+      break;
   }
+  return newState;
 }
