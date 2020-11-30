@@ -1,4 +1,4 @@
-function SpotController(user) {
+function usersController(user) {
   function getMethod(req, res) {
     const query = {};
     user.find(query, (errorFindUser, userData) => (errorFindUser
@@ -13,4 +13,4 @@ function SpotController(user) {
   return { getMethod, putMethod };
 }
 
-module.exports = SpotController;
+module.exports = usersController;
