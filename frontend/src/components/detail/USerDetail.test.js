@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
+import { BrowserRouter } from 'react-router-dom';
 import UserDetail from './UserDetail';
 
 jest.mock('../../redux/actions/userActions');
@@ -22,8 +23,9 @@ describe('UserDetail', () => {
 
     return ({ children }) => (
       <Provider store={store}>
-
-        {children}
+        <BrowserRouter>
+          {children}
+        </BrowserRouter>
 
       </Provider>
     );
@@ -34,10 +36,10 @@ describe('UserDetail', () => {
     wrapper = null;
   });
   test('should render submit button', () => {
-    const initialState = {};
+    const initialState = { userReducer: { user: 'asdasd' } };
     wrapper = wrapperFactory(initialState);
     render(<UserDetail />, { wrapper });
 
-    expect(document.getElementById('user_stance')).toHaveTextContent('stance:');
+    expect(document.getElementById('user_stance')).toHaveTextContent('Stance:');
   });
 });
