@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import UserDetail from './components/detail/UserDetail';
+import SpotDetail from './components/spotDetail/SpotDetail';
+import './index.css';
 
 const theme = createMuiTheme({
   palette: {
@@ -20,7 +22,11 @@ function App() {
       <BrowserRouter>
         <Switch>
           <Route path="/user/:userId" component={UserDetail} />
+
+          <Route path="/spot/:spotId" component={SpotDetail} />
+
         </Switch>
+
       </BrowserRouter>
     </ThemeProvider>
   );

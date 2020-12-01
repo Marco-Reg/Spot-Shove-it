@@ -28,10 +28,15 @@ backdrop-filter: blur(4px);
 
 
 border-radius: 50px;
+margin-top: 10px;
 }
 #user_stance{
     text-transform:uppercase;
     
     padding-top: 32px;
     padding-left: 65px;
+}
+#video-description{
+    display: flex;
+    align-items: center;
 }

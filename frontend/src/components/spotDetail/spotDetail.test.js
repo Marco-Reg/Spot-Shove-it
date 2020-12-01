@@ -8,7 +8,9 @@ import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 
 import { BrowserRouter } from 'react-router-dom';
-import UserDetail from './UserDetail';
+
+import spotDetail from './spotDetail';
+import SpotDetail from './spotDetail';
 
 jest.mock('../../redux/actions/userActions');
 
@@ -36,10 +38,17 @@ describe('UserDetail', () => {
     wrapper = null;
   });
   test('should render submit button', () => {
-    const initialState = { userReducer: { user: 'asdasd' } };
+    const initialState = { spotReducer: { user: 'asdasd' } };
     wrapper = wrapperFactory(initialState);
-    render(<UserDetail />, { wrapper });
+    render(<SpotDetail />, { wrapper });
 
-    expect(document.getElementById('user_stance')).toHaveTextContent('Stance:');
+    expect(document.getElementById('carousel-size')).toBeDefined();
+  });
+  test('should render submit button', () => {
+    const initialState = { spotReducer: { user: 'asdasd' } };
+    wrapper = wrapperFactory(initialState);
+    render(<SpotDetail />, { wrapper });
+
+    expect(document.getElementById('carousel-compo')).toBeDefined();
   });
 });
