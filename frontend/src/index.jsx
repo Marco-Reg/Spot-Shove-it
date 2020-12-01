@@ -12,8 +12,11 @@ const store = configureStore(initialState);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <NavBar />
-      <App />
+      <div id="full-app">
+        <NavBar />
+        <App />
+
+      </div>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root'),

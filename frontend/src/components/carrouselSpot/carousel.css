@@ -1,0 +1,22 @@
+*{
+    margin:0px;
+    
+}
+#carousel-size{
+    width:450px;
+    height: 225px;
+    background-color: #252525 ;
+    color: #252525;
+    border: 4px solid #BBBBBb;
+    border-radius:10px;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    
+}
+#carousel-compo{
+    
+    color: #252525;
+    background-color:  #252525;
+    width: 100%;
+    
+}

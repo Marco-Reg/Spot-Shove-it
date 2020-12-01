@@ -1,0 +1,42 @@
+#spot-detail-wrapper{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color:  #252525;
+
+}
+#user-stance{
+    color:#BBBBBB;
+    width: 273px;
+    height: 83px;
+    left: 35px;
+    top: 266px;
+        
+    background: #110F0F;
+    backdrop-filter: blur(4px);
+        
+        
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+
+}
+
+
+#user_stance{
+    
+    text-transform:uppercase;
+    color:#BBBBBB;
+
+}
+#description{
+    color:#BBBBBB;
+    color: #BBBBBB;
+    width: 60vh;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center; 
+    font-size: 25px;
+}
