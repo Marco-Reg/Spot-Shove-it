@@ -5,6 +5,8 @@ const { connect } = require('mongoose');
 
 const userProfile = require('./src/models/userProfile');
 const userRoutes = require('./src/routes/userRoutes')(userProfile);
+const spotDetailRoutes = require('./src/models/spotDetail');
+const spotRoutes = require('./src/routes/spotRoutes')(spotDetailRoutes);
 
 const app = express();
 app.use(cors());
@@ -14,8 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const database = process.env.spotsDB || 'mongodb://localhost/spotshoveit';
-connect('mongodb://localhost/spotshoveit');
+connect(database);
 app.use('/user', userRoutes);
+app.use('/spot', spotRoutes);
 
 app.listen(port, () => {
   console.log(`server is running on por ${port}`);
