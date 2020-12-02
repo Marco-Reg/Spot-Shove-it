@@ -20,12 +20,11 @@ function SpotDetail({ spot, dispatch }) {
   return (
     <>
       <section id="spot-detail-wrapper">
-        <div id="linebreak">
 
-          <div id="user_stance">
-            {spot?.spotName}
-          </div>
+        <div id="user_stance">
+          {spot?.spotName}
         </div>
+
         <div id="linebreak">
           <img alt="spot" src={spot?.spotImage[2]} id="spot-image" />
         </div>
@@ -38,6 +37,12 @@ function SpotDetail({ spot, dispatch }) {
             </p>
           </div>
 
+        </div>
+        <div id="linebreak">
+          <img alt="spot" src={spot?.spotImage[1]} id="spot-image-one" />
+          <div id="linebreak-vertical" />
+          <p id="spot-location">{spot?.spotLocation}</p>
+          <p />
         </div>
 
       </section>

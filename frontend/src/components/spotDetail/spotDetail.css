@@ -32,9 +32,8 @@
 #user_stance{
     
     text-transform:uppercase;
-    color:#BBBBBB;
-    margin-right: 50px;
-    margin-bottom: 10px;
+    color:#D16F4D;
+    
     font-size: 40px;   
 }
 #description{
@@ -65,4 +64,28 @@
     
     margin-top: 50px;
     object-fit: scale-down;
+}
+#spot-image-one{
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
+}
+#linebreak-vertical{
+    border-right: 1px dotted #ddd;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+#spot-location{
+    text-align: center;
+    margin-top: 50px;
+    color:#BBBBBB;
+    color: #BBBBBB;
+    width: 60vh;
+    width: 100vh;
+    
+    
+    text-align: center; 
+    font-size: 23px;
+    
+    text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
 }
