@@ -11,6 +11,7 @@ const store = configureStore(initialState);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+
       <div id="full-app">
 
         <App />
