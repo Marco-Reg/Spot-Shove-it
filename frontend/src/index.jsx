@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import configureStore from './redux/configureStore';
 import App from './App';
-import NavBar from './components/navbar/NavBar';
 
 const initialState = { userReducer: { user: { _id: '5fc50f72fcb4ee1210e2578e' } } };
 const store = configureStore(initialState);
@@ -13,7 +12,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <div id="full-app">
-        <NavBar />
+
         <App />
 
       </div>
