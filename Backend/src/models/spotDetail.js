@@ -9,5 +9,6 @@ const spotDetailSchema = new Schema({
   spotStyle: { type: String },
   spotBestVideo: { type: String },
   spotRating: [Number],
+  spotLocation: { type: String },
 });
 module.exports = model('spot', spotDetailSchema);
