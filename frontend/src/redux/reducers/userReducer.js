@@ -6,7 +6,7 @@ export default function userReducer(state = {}, action) {
   switch (action.type) {
     case actionTypes.LOAD_USER:
       newState = { ...state, user: action.user };
-      debugger;
+
       break;
     case actionTypes.LOAD_USER_ERROR:
       newState = { ...state, error: action.error };

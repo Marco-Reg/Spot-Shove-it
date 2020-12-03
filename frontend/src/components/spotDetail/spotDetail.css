@@ -1,3 +1,6 @@
+*{
+    font-family: 'Oswald', sans-serif;
+}
 #spot-detail-wrapper{
     display:flex;
     flex-direction: column;
@@ -12,6 +15,7 @@
     height: 83px;
     left: 35px;
     top: 266px;
+     
         
     background: #110F0F;
     backdrop-filter: blur(4px);
@@ -28,15 +32,57 @@
 #user_stance{
     
     text-transform:uppercase;
-    color:#BBBBBB;
-
+    color:#D16F4D;
+    
+    font-size: 40px;   
 }
 #description{
     color:#BBBBBB;
     color: #BBBBBB;
     width: 60vh;
-    border: 1px solid;
-    border-radius: 10px;
+    width: 100vh;
+    
+    
     text-align: center; 
-    font-size: 25px;
+    font-size: 23px;
+    
+    text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
+}
+
+#linebreak{
+    border-top: 1px dotted #ddd;
+    margin-top: 28px;
+    margin-bottom: 29px;
+    width: 100vh;
+}
+#spot-image{
+    width: 80vh;
+    height: 70vh;
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+    
+    
+    margin-top: 50px;
+    object-fit: scale-down;
+}
+#spot-image-one{
+    width: 250px;
+    height: 250px;
+    margin-top: 30px;
+}
+.linebreak-vertical{
+    border-right: 1px dotted #ddd;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+#spot-location{
+    text-align: center;
+    margin-top: 50px;
+    color:#BBBBBB;
+    color: #BBBBBB;
+    width: 60vh;
+    width: 100vh;
+    text-align: center; 
+    font-size: 23px;
+    text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
 }

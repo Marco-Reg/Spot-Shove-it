@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { requestSpot } from '../../redux/actions/spotActions';
-import CarrouselSpot from '../carrouselSpot/CarrouselSpot';
+
 import './spotDetail.css';
 
 function SpotDetail({ spot, dispatch }) {
@@ -20,20 +20,28 @@ function SpotDetail({ spot, dispatch }) {
   return (
     <>
       <section id="spot-detail-wrapper">
-        <CarrouselSpot />
 
         <div id="user_stance">
-
           {spot?.spotName}
         </div>
 
-        <div id="video-description">
+        <div id="linebreak">
+          <img alt="spot" src={spot?.spotImage[2]} id="spot-image" />
+        </div>
+        <div id="linebreak">
+          <div id="video-description">
+            <p id="description">
+              {' '}
 
-          <p id="description">
-            {' '}
-            {spot?.spotDescription}
-          </p>
+              {spot?.spotDescription}
+            </p>
+          </div>
 
+        </div>
+        <div id="linebreak">
+          <img alt="spot" src={spot?.spotImage[1]} id="spot-image-one" />
+          <div className="linebreak-vertical" />
+          <p id="spot-location">{spot?.spotLocation}</p>
         </div>
 
       </section>
