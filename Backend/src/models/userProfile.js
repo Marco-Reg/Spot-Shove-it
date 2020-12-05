@@ -10,6 +10,7 @@ const profileSchema = new Schema({
   userStance: { type: String },
   userCity: { type: String },
   userStyle: { type: String },
+  userPhotos: [String],
 
 });
 
