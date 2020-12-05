@@ -13,7 +13,7 @@ function UserDetail({ user, dispatch }) {
       dispatch(requestUser(userId));
     }
   }, []);
-  console.log(user);
+
   return (
     <>
       <section className="main-wrapper">
@@ -63,7 +63,6 @@ function UserDetail({ user, dispatch }) {
 }
 
 function mapStateToProps({ userReducer }) {
-  debugger;
   return {
     user: userReducer.user,
   };
