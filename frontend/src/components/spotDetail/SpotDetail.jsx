@@ -38,7 +38,7 @@ function SpotDetail({ spot, dispatch }) {
           </div>
 
         </div>
-        <div id="linebreak">
+        <div id="linebreak" className="location">
           <img alt="spot" src={spot?.spotImage[1]} id="spot-image-one" />
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>

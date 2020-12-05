@@ -9,7 +9,7 @@ import './userDetail.css';
 function UserDetail({ user, dispatch }) {
   const { userId } = useParams();
   useEffect(() => {
-    if (!user || !user.name) {
+    if (!user || !user.name || !user.userPhotos.length) {
       dispatch(requestUser(userId));
     }
   }, []);
@@ -17,20 +17,45 @@ function UserDetail({ user, dispatch }) {
   return (
     <>
       <section className="main-wrapper">
+        <p id="user-name">{user?.userName}</p>
         <img src={user?.userImage} alt="user-avatar" id="user-image" />
+        <div id="linebreak" />
+        <div id="user-spects">
+          <p id="user-description">{user?.userDescription}</p>
+          <div className="linebreak-vertical" />
+          <ul id="spects">
 
-        <p id="user-stance">
-          <div id="user_stance">
+            <li id="spects">
+              City/Country :
+              {' '}
+            </li>
+            {user?.UserCity}
+            <li>
+              Stance :
+              {' '}
+              {user?.userStance}
+            </li>
+            <li>
+              Most Favorites skate styles :
+              {' '}
+              {user?.userStyle}
+            </li>
+          </ul>
 
-            Stance:
-            {user?.userStance}
+        </div>
+        <div id="linebreak">
+          <div id="photo-section">
+
+            {user && user.userPhotos?.length && user.userPhotos.map((userPhoto) => (
+              <img
+                className="user-photos"
+                src={`${userPhoto}`}
+                alt="skate-photos"
+              />
+            ))}
           </div>
-        </p>
 
-        <p id="profile-description">
-          {user?.userDescription}
-
-        </p>
+        </div>
 
       </section>
     </>
