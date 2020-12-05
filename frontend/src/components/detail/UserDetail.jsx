@@ -9,11 +9,11 @@ import './userDetail.css';
 function UserDetail({ user, dispatch }) {
   const { userId } = useParams();
   useEffect(() => {
-    if (!user || !user.name) {
+    if (!user || !user.name || !user.userPhotos.length) {
       dispatch(requestUser(userId));
     }
   }, []);
-
+  console.log(user);
   return (
     <>
       <section className="main-wrapper">
@@ -23,9 +23,12 @@ function UserDetail({ user, dispatch }) {
         <div id="user-spects">
           <p id="user-description">{user?.userDescription}</p>
           <div className="linebreak-vertical" />
-          <li id="spects">
-            City/Country :
-            {' '}
+          <ul id="spects">
+
+            <li id="spects">
+              City/Country :
+              {' '}
+            </li>
             {user?.UserCity}
             <li>
               Stance :
@@ -37,9 +40,21 @@ function UserDetail({ user, dispatch }) {
               {' '}
               {user?.userStyle}
             </li>
+          </ul>
 
-          </li>
-          <li />
+        </div>
+        <div id="linebreak">
+          <div id="photo-section">
+
+            {user && user.userPhotos?.length && user.userPhotos.map((userPhoto) => (
+              <img
+                className="user-photos"
+                src={`${userPhoto}`}
+                alt="skate-photos"
+              />
+            ))}
+          </div>
+
         </div>
 
       </section>
@@ -48,6 +63,7 @@ function UserDetail({ user, dispatch }) {
 }
 
 function mapStateToProps({ userReducer }) {
+  debugger;
   return {
     user: userReducer.user,
   };

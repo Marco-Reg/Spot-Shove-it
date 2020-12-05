@@ -5,6 +5,7 @@ export default function userReducer(state = {}, action) {
   let newState = null;
   switch (action.type) {
     case actionTypes.LOAD_USER:
+
       newState = { ...state, user: action.user };
 
       break;
