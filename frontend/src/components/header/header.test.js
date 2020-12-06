@@ -1,21 +1,18 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Simulate } from 'react-dom/test-utils';
 
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
-
 import { BrowserRouter } from 'react-router-dom';
+import Header from './Header';
 
-import SpotDetail from './SpotDetail';
-
-jest.mock('../../redux/actions/userActions');
+jest.mock('../../redux/actions/listActions');
 
 const buildStore = configureStore([thunk]);
 
-describe('UserDetail', () => {
+describe('List', () => {
   let wrapper;
 
   const wrapperFactory = (wrapperInitialState) => {
@@ -27,27 +24,18 @@ describe('UserDetail', () => {
         <BrowserRouter>
           {children}
         </BrowserRouter>
-
       </Provider>
     );
   };
-
   afterEach(() => {
     jest.restoreAllMocks();
     wrapper = null;
   });
-  test('should render submit button', () => {
-    const initialState = { spotReducer: { user: 'asdasd' } };
+  test('should render Link button to home', () => {
+    const initialState = { listReducer: { user: 'pepo' } };
     wrapper = wrapperFactory(initialState);
-    render(<SpotDetail />, { wrapper });
+    render(<Header />, { wrapper });
 
-    expect(document.getElementById('carousel-size')).toBeDefined();
-  });
-  test('should render submit button', () => {
-    const initialState = { spotReducer: { user: 'asdasd' } };
-    wrapper = wrapperFactory(initialState);
-    render(<SpotDetail />, { wrapper });
-
-    expect(document.getElementById('carousel-compo')).toBeDefined();
+    expect(document.getElementById('logo-spot')).toBeDefined();
   });
 });
