@@ -7,6 +7,8 @@ const userProfile = require('./src/models/userProfile');
 const userRoutes = require('./src/routes/userRoutes')(userProfile);
 const spotDetailRoutes = require('./src/models/spotDetail');
 const spotRoutes = require('./src/routes/spotRoutes')(spotDetailRoutes);
+const listItems = require('./src/models/spotDetail');
+const listRoutes = require('./src/routes/listRoutes')(listItems);
 
 const app = express();
 app.use(cors());
@@ -19,6 +21,7 @@ const database = process.env.spotsDB || 'mongodb://localhost/spotshoveit';
 connect(database);
 app.use('/user', userRoutes);
 app.use('/spot', spotRoutes);
+app.use('/spots', listRoutes);
 
 app.listen(port, () => {
   console.log(`server is running on por ${port}`);
