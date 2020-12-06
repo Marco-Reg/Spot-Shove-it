@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
 export default function listReducer(state = {}, action) {
@@ -5,7 +6,8 @@ export default function listReducer(state = {}, action) {
 
   switch (action.type) {
     case actionTypes.LOAD_SPOTS:
-      newState = { ...state, spots: action.spots };
+
+      newState = { ...state, spots: action.list };
 
       break;
     case actionTypes.LOAD_SPOTS_ERROR:

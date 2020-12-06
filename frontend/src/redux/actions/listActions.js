@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -20,6 +21,7 @@ export function requestListSpots() {
     const endpoint = 'http://localhost:3020/spots';
     try {
       const spots = await axios.get(endpoint);
+
       dispatch(requesListSpotSuccess(spots.data));
     } catch (error) {
       dispatch(requestListSpotError(error));
