@@ -5,15 +5,19 @@
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    
     flex-direction: column;
     text-align: center;
+}
+.project_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .spot_title{
     text-transform:uppercase;
     color:#D16F4D;
-    
     font-size: 40px;
     text-decoration: none;   
 }
@@ -34,13 +38,19 @@
     
 }
 #spot-link:visited{
-    
-    
     text-transform: uppercase;
-    
     text-decoration: none;
     
 }
 #spot-link{
     text-decoration: none;
+}
+
+#linebreak{
+    
+    border-top: 1px dotted #ddd;
+    margin-top: 28px;
+    width: 100vh;
+
+    
 }

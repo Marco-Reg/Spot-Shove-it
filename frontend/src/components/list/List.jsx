@@ -22,8 +22,8 @@ function List({ spots, dispatch }) {
               {spots.map((spot) => (
                 <div className="project_wrapper" id="list_wrapper">
                   <Link id="spot-link" to={`/spot/${spot._id}`}>
-                    <div id="linebreak" />
                     <h3 className="spot_title">{spot.spotName}</h3>
+                    <div id="linebreak" />
                   </Link>
                   <p className="spot-info">{spot.spotLocation}</p>
                   <p className="spot-style">
