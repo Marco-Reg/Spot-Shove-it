@@ -40,6 +40,13 @@ describe('UserDetail', () => {
     wrapper = wrapperFactory(initialState);
     render(<UserDetail />, { wrapper });
 
-    expect(document.getElementById('user_stance')).toHaveTextContent('Stance:');
+    expect(document.getElementById('spects')).toHaveTextContent('Stance :');
+  });
+  test('should render submit button', () => {
+    const initialState = { userReducer: { user: 'asdasd' } };
+    wrapper = wrapperFactory(initialState);
+    render(<UserDetail />, { wrapper });
+
+    expect(document.getElementById('user-photos')).toBeDefined();
   });
 });
