@@ -9,8 +9,7 @@ import configureStore from 'redux-mock-store';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import spotDetail from './spotDetail';
-import SpotDetail from './spotDetail';
+import SpotDetail from './SpotDetail';
 
 jest.mock('../../redux/actions/userActions');
 

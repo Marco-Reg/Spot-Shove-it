@@ -5,6 +5,7 @@ import UserDetail from './components/detail/UserDetail';
 import SpotDetail from './components/spotDetail/SpotDetail';
 import './index.css';
 import Header from './components/header/Header';
+import List from './components/list/List';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/user/:userId" component={UserDetail} />
 
         <Route path="/spot/:spotId" component={SpotDetail} />
+        <Route path="/spots/" component={List} />
 
       </Switch>
 

@@ -29,13 +29,13 @@ function Header() {
 
       </div>
       <div id="home-link">
-        <Link to="/user/:id" id="homie">
+        <Link to="/user/5fc50f72fcb4ee1210e2578e" id="homie">
           <p id="homie">Profile</p>
         </Link>
 
       </div>
       <div id="home-link">
-        <Link to="/spot/5fc613befcb4ee1210e2578f" id="homie">
+        <Link to="/spots/" id="homie">
           <p id="homie">Spots</p>
         </Link>
 

@@ -48,6 +48,7 @@ function UserDetail({ user, dispatch }) {
 
             {user && user.userPhotos?.length && user.userPhotos.map((userPhoto) => (
               <img
+                id="user-photos"
                 className="user-photos"
                 src={`${userPhoto}`}
                 alt="skate-photos"
