@@ -24,29 +24,32 @@ function Header({ dispatch }) {
         </Link>
 
       </div>
-      <div id="home-link">
-        <Link to="/" id="homie">
-          <p id="login" onClick={handleLoginClick}>Login</p>
-        </Link>
+      <div id="buttons-link">
 
-      </div>
-      <div id="home-link">
-        <Link to="/" id="homie">
-          <p id="homie">home</p>
-        </Link>
+        <div id="home-link">
+          <Link to="/" id="homie">
+            <p id="login" onClick={handleLoginClick}>Login</p>
+          </Link>
 
-      </div>
-      <div id="home-link">
-        <Link to="/user/5fc50f72fcb4ee1210e2578e" id="homie">
-          <p id="homie">Profile</p>
-        </Link>
+        </div>
+        <div id="home-link">
+          <Link to="/" id="homie">
+            <p id="homie">home</p>
+          </Link>
 
-      </div>
-      <div id="home-link">
-        <Link to="/spots/" id="homie">
-          <p id="homie">Spots</p>
-        </Link>
+        </div>
+        <div id="home-link">
+          <Link to="/user/5fc50f72fcb4ee1210e2578e" id="homie">
+            <p id="homie">Profile</p>
+          </Link>
 
+        </div>
+        <div id="home-link">
+          <Link to="/spots/" id="homie">
+            <p id="homie">Spots</p>
+          </Link>
+
+        </div>
       </div>
 
     </header>
