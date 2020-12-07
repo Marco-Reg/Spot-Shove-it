@@ -5,5 +5,8 @@ const actionTypes = {
   LOAD_SPOT_ERROR: 'LOAD_SPOT_ERROR',
   LOAD_SPOTS: 'LOAD_SPOTS',
   LOAD_SPOTS_ERROR: 'LOAD_SPOTS_ERROR',
+  LOGIN_USER_GOOGLE: 'LOGIN_USER_GOOGLE',
+  LOGIN_ERROR: 'LOGIN_ERROR',
+
 };
 export default actionTypes;

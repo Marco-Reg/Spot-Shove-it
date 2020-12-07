@@ -1,8 +1,16 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { connect } from 'react-redux';
+import { loginUserWithGoogle } from '../../redux/actions/authAction';
 
-function Header() {
+function Header({ dispatch }) {
+  async function handleLoginClick() {
+    dispatch(loginUserWithGoogle());
+  }
   return (
     <header id="info-header">
       <div id="log-box">
@@ -18,7 +26,7 @@ function Header() {
       </div>
       <div id="home-link">
         <Link to="/" id="homie">
-          <p id="login">Login</p>
+          <p id="login" onClick={handleLoginClick}>Login</p>
         </Link>
 
       </div>
@@ -45,4 +53,4 @@ function Header() {
 
   );
 }
-export default Header;
+export default connect()(Header);
