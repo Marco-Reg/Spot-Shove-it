@@ -5,12 +5,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { connect } from 'react-redux';
-import { loginUserWithGoogle } from '../../redux/actions/authAction';
+import { loginUserWithGoogle, signoutUser } from '../../redux/actions/authAction';
 
-function Header({ dispatch }) {
-  async function handleLoginClick() {
+function Header({ user, dispatch }) {
+  function handleLogoutClick() {
+    dispatch(signoutUser());
+  }
+  function handleLoginClick() {
     dispatch(loginUserWithGoogle());
   }
+
   return (
     <header id="info-header">
       <div id="log-box">
@@ -27,8 +31,10 @@ function Header({ dispatch }) {
       <div id="buttons-link">
 
         <div id="home-link">
+
           <Link to="/" id="homie">
-            <p id="login" onClick={handleLoginClick}>Login</p>
+            {!user ? <p id="login" onClick={handleLoginClick}>Login</p> : <p id="login" onClick={handleLogoutClick}>Logout</p>}
+
           </Link>
 
         </div>
@@ -56,4 +62,10 @@ function Header({ dispatch }) {
 
   );
 }
-export default connect()(Header);
+
+function mapStateToProps(state) {
+  return {
+    user: state.authReducer.user,
+  };
+}
+export default connect(mapStateToProps)(Header);

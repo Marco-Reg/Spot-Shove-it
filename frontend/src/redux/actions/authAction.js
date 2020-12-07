@@ -14,10 +14,16 @@ function LoginGoogleError(loginError) {
   };
 }
 
+export function signoutUser() {
+  return {
+    type: actionTypes.SIGNOUT_SUCCESS,
+  };
+}
+
 export function loginUserWithGoogle() {
   return async (dispatch) => {
     try {
-      const user = await signinWithGoogle();
+      const { user } = await signinWithGoogle();
       dispatch(loginGoogleSuccess(user));
     } catch (loginError) {
       dispatch(LoginGoogleError(loginError));

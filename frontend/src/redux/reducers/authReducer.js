@@ -9,6 +9,12 @@ export default function authReducer(state = {}, action) {
     case actionTypes.LOGIN_ERROR:
       newState = { ...state, loginError: action.loginError };
       break;
+    case actionTypes.SIGNOUT_SUCCESS:
+      newState = { ...state, user: null };
+      break;
+    case actionTypes.SIGNOUT_ERROR:
+      newState = { ...state, signoutError: action.signoutError };
+      break;
 
     default:
       newState = state;
