@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 import { requestUser } from '../../redux/actions/userActions';
 import './userDetail.css';
 

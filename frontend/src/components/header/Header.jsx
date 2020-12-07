@@ -45,7 +45,7 @@ function Header({ user, dispatch }) {
 
         </div>
         <div id="home-link">
-          <Link to="/user/5fc50f72fcb4ee1210e2578e" id="homie">
+          <Link to="/user/:userId" id="homie">
             <p id="homie">Profile</p>
           </Link>
 

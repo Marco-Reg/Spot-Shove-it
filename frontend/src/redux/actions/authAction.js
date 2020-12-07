@@ -1,4 +1,5 @@
 /* eslint-disable import/prefer-default-export */
+import axios from 'axios';
 import actionTypes from './actionTypes';
 import signinWithGoogle from '../../firebase/firebaseMethod';
 
@@ -24,7 +25,9 @@ export function loginUserWithGoogle() {
   return async (dispatch) => {
     try {
       const { user } = await signinWithGoogle();
-      dispatch(loginGoogleSuccess(user));
+      const checkUser = await axios.put('http://localhost:3020/user/', { user });
+      dispatch(loginGoogleSuccess(checkUser));
+      dispatch(checkUser);
     } catch (loginError) {
       dispatch(LoginGoogleError(loginError));
     }
