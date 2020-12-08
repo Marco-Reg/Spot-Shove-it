@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 const database = process.env.spotsDB || 'mongodb://localhost/spotshoveit';
 connect(database);
+
 app.use('/user', userRoutes);
 app.use('/spot', spotRoutes);
 app.use('/spots', listRoutes);
