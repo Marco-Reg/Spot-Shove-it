@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -45,12 +46,14 @@ function Header({ user, dispatch }) {
           </Link>
 
         </div>
+        { user && user._id && (
         <div id="home-link">
           <Link to={`/user/${user._id}`} id="homie">
             <p id="homie">Profile</p>
           </Link>
 
         </div>
+        )}
         <div id="home-link">
           <Link to="/spots/" id="homie">
             <p id="homie">Spots</p>

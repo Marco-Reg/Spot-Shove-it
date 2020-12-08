@@ -21,7 +21,7 @@ function UserDetail({ user, dispatch }) {
       <section className="main-wrapper">
         <p id="user-name">{user?.userName}</p>
         <img src={user?.userImage} alt="user-avatar" id="user-image" />
-        <div id="linebreak" />
+        <div id="linebreak-user" />
         <div id="user-spects">
           <p id="user-description">{user?.userDescription}</p>
           <div className="linebreak-vertical" />
@@ -30,8 +30,8 @@ function UserDetail({ user, dispatch }) {
             <li id="spects">
               City/Country :
               {' '}
+              {user?.UserCity}
             </li>
-            {user?.UserCity}
             <li>
               Stance :
               {' '}
@@ -45,7 +45,7 @@ function UserDetail({ user, dispatch }) {
           </ul>
 
         </div>
-        <div id="linebreak">
+        <div id="linebreak-user">
           <div id="photo-section">
 
             {user && user.userPhotos?.length && user.userPhotos.map((userPhoto) => (
