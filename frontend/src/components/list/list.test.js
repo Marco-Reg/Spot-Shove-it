@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { render } from '@testing-library/react';
@@ -30,6 +31,13 @@ describe('List', () => {
   afterEach(() => {
     jest.restoreAllMocks();
     wrapper = null;
+  });
+  test('should render Link button to home', () => {
+    const initialState = { listReducer: { user: 'pepo' } };
+    wrapper = wrapperFactory(initialState);
+    render(<List />, { wrapper });
+
+    expect(document.getElementById('list_wrapper')).toBeDefined();
   });
   test('should render Link button to home', () => {
     const initialState = { listReducer: { user: 'pepo' } };

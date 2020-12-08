@@ -27,7 +27,7 @@ export function loginUserWithGoogle() {
     try {
       const { user } = await signinWithGoogle();
       const checkUser = await axios.put('http://localhost:3020/user/', { user });
-      debugger;
+
       dispatch(loginGoogleSuccess(checkUser.data));
     } catch (loginError) {
       dispatch(LoginGoogleError(loginError));

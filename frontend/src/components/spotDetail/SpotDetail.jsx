@@ -21,24 +21,23 @@ function SpotDetail({ spot, dispatch }) {
     <>
       <section id="spot-detail-wrapper">
 
-        <div id="user_stance">
+        <div id="spot_name">
           {spot?.spotName}
         </div>
 
-        <div id="linebreak">
-          <img alt="spot" src={spot?.spotImage[1]} id="spot-image" />
-        </div>
-        <div id="linebreak">
-          <div id="video-description">
-            <p id="description">
-              {' '}
+        <div id="linebreak-detail" />
+        <img alt="spot" src={spot?.spotImage[1]} id="spot-image" />
 
-              {spot?.spotDescription}
-            </p>
-          </div>
+        <div id="linebreak-detail" />
+        <div id="video-description">
+          <p id="description">
+            {' '}
 
+            {spot?.spotDescription}
+          </p>
         </div>
-        <div id="linebreak" className="location">
+
+        <div id="linebreak-detail" className="location">
           <img alt="spot" src={spot?.spotImage[2]} id="spot-image-one" />
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>

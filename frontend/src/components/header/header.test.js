@@ -32,10 +32,17 @@ describe('List', () => {
     wrapper = null;
   });
   test('should render Link button to home', () => {
-    const initialState = { listReducer: { user: 'pepo' } };
+    const initialState = { listReducer: { user: { name: 'anacleto' } } };
     wrapper = wrapperFactory(initialState);
     render(<Header />, { wrapper });
 
     expect(document.getElementById('logo-spot')).toBeDefined();
+  });
+  test('should render Header', () => {
+    const initialState = { listReducer: { user: 'pepo' } };
+    wrapper = wrapperFactory(initialState);
+    render(<Header />, { wrapper });
+
+    expect(document.getElementById('info-header')).toBeDefined();
   });
 });
