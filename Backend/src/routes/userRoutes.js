@@ -4,9 +4,12 @@ const userController = require('../controllers/usersController');
 function routes(user) {
   const userRouter = express.Router();
   const userItems = userController(user);
-  userRouter.route('/:userId')
-    .get(userItems.getMethod)
+
+  userRouter.route('/')
     .put(userItems.putMethod);
+
+  userRouter.route('/:userId')
+    .get(userItems.getMethod);
   return userRouter;
 }
 

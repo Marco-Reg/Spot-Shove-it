@@ -3,11 +3,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 import { requestUser } from '../../redux/actions/userActions';
 import './userDetail.css';
 
 function UserDetail({ user, dispatch }) {
   const { userId } = useParams();
+
   useEffect(() => {
     if (!user || !user.name || !user.userPhotos.length) {
       dispatch(requestUser(userId));
@@ -65,6 +67,7 @@ function UserDetail({ user, dispatch }) {
 
 function mapStateToProps({ userReducer }) {
   return {
+
     user: userReducer.user,
   };
 }

@@ -1,8 +1,21 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { connect } from 'react-redux';
+import { loginUserWithGoogle, signoutUser } from '../../redux/actions/authAction';
 
-function Header() {
+function Header({ user, dispatch }) {
+  function handleLogoutClick() {
+    dispatch(signoutUser());
+  }
+  function handleLoginClick() {
+    dispatch(loginUserWithGoogle());
+  }
+
   return (
     <header id="info-header">
       <div id="log-box">
@@ -16,33 +29,44 @@ function Header() {
         </Link>
 
       </div>
-      <div id="home-link">
-        <Link to="/" id="homie">
-          <p id="login">Login</p>
-        </Link>
+      <div id="buttons-link">
 
-      </div>
-      <div id="home-link">
-        <Link to="/" id="homie">
-          <p id="homie">home</p>
-        </Link>
+        <div id="home-link">
 
-      </div>
-      <div id="home-link">
-        <Link to="/user/5fc50f72fcb4ee1210e2578e" id="homie">
-          <p id="homie">Profile</p>
-        </Link>
+          <Link to="/" id="homie">
+            {!user ? <p id="login" onClick={handleLoginClick}>Login</p> : <p id="login" onClick={handleLogoutClick}>Logout</p>}
 
-      </div>
-      <div id="home-link">
-        <Link to="/spots/" id="homie">
-          <p id="homie">Spots</p>
-        </Link>
+          </Link>
 
+        </div>
+        <div id="home-link">
+          <Link to="/" id="homie">
+            <p id="homie">home</p>
+          </Link>
+
+        </div>
+        <div id="home-link">
+          <Link to={`/user/${user._id}`} id="homie">
+            <p id="homie">Profile</p>
+          </Link>
+
+        </div>
+        <div id="home-link">
+          <Link to="/spots/" id="homie">
+            <p id="homie">Spots</p>
+          </Link>
+
+        </div>
       </div>
 
     </header>
 
   );
 }
-export default Header;
+
+function mapStateToProps(state) {
+  return {
+    user: state.authReducer.user,
+  };
+}
+export default connect(mapStateToProps)(Header);

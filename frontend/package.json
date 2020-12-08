@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
+    "firebase": "^8.1.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-elastic-carousel": "^0.9.5",

@@ -11,6 +11,7 @@ const profileSchema = new Schema({
   userCity: { type: String },
   userStyle: { type: String },
   userPhotos: [String],
+  email: { type: String },
 
 });
 
