@@ -18,9 +18,10 @@ function requestUserError(error) {
 
 export function requestUser(userId) {
   return async (dispatch) => {
-    const endpoint = 'http://localhost:3020/user/';
+    const endpoint = 'http://localhost:3020/user/:userId';
     try {
       const user = await axios.get(endpoint, { userId });
+
       dispatch(requestUserInfo(user.data));
     } catch (error) {
       dispatch(requestUserError(error));
