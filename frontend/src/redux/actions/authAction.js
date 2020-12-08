@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import actionTypes from './actionTypes';
@@ -26,8 +27,8 @@ export function loginUserWithGoogle() {
     try {
       const { user } = await signinWithGoogle();
       const checkUser = await axios.put('http://localhost:3020/user/', { user });
-      dispatch(loginGoogleSuccess(checkUser));
-      dispatch(checkUser);
+      debugger;
+      dispatch(loginGoogleSuccess(checkUser.data));
     } catch (loginError) {
       dispatch(LoginGoogleError(loginError));
     }
