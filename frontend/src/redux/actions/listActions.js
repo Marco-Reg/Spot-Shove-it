@@ -15,6 +15,11 @@ function requestListSpotError(error) {
 
   };
 }
+export function randomSpots(list) {
+  return {
+    type: actionTypes.RANDOM_SPOTS, list,
+  };
+}
 
 export function requestListSpots() {
   return async (dispatch) => {

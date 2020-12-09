@@ -1,0 +1,37 @@
+#top-part{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:#252525;
+}
+
+#title{
+    margin-top:75px;
+    text-align: center;
+    text-transform: uppercase;
+    color:#dddd;
+    font-size: 35px;
+}
+#sub-title{
+    text-align: center;
+    text-transform: uppercase;
+    color:#dddd;
+
+}
+#random-spot{
+    background-color:#252525;
+
+}
+#random-spot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#dddd;
+}
+#maperoni{
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
