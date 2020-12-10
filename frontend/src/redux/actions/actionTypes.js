@@ -9,6 +9,7 @@ const actionTypes = {
   LOGIN_ERROR: 'LOGIN_ERROR',
   SIGNOUT_SUCCESS: 'SIGNOUT_SUCCESS',
   SIGNOUT_ERROR: 'SIGNOUT_ERROR',
+  RANDOM_SPOTS: 'RANDOM_SPOTS',
 
 };
 export default actionTypes;
