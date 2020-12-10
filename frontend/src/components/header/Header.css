@@ -66,5 +66,8 @@
     #homie{
         font-size: 20px;
     }
+    #homie:hover{
+        color:#D16F4D;
+    }
 }
     

@@ -34,6 +34,7 @@ function RandomSpot({ spots, dispatch }) {
 
   );
 }
+
 function mapStateToProps({ listReducer }) {
   return {
     spots: listReducer.spots,
