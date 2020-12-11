@@ -1,7 +1,8 @@
 import React from 'react';
 import './home.css';
-import Map from '../map/Map';
+
 import RandomSpot from '../randomSpot/RandomSpot';
+import Maps from '../map/MapTest';
 
 function MainPage() {
   return (
@@ -17,12 +18,7 @@ function MainPage() {
         </div>
         <div id="maperoni">
 
-          <Map
-            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDZ47kWyh51pVo7LVbUloOsUUysWvocKfY"
-            loadingElement={<div style={{ height: '100%' }} />}
-            containerElement={<div style={{ height: '100%' }} />}
-            mapElement={<div style={{ height: '100%' }} />}
-          />
+          <Maps />
         </div>
 
       </section>

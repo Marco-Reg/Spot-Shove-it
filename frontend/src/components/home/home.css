@@ -35,3 +35,9 @@
     flex-direction: column;
     margin-left: 20px;
 }
+
+#map-Detail{
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}

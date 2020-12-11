@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import Maps from '../map/MapTest';
 import { requestSpot } from '../../redux/actions/spotActions';
 
 import './spotDetail.css';
@@ -42,6 +43,8 @@ function SpotDetail({ spot, dispatch }) {
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>
         </div>
+        <p>Map Spot</p>
+        <Maps />
 
       </section>
 
