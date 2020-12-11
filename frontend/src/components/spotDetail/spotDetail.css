@@ -91,6 +91,18 @@
 .location{
     display: flex;
 }
+#description-map{
+    text-align: center;
+    margin-top: 50px;
+    color:#D16F4D;
+    width: 60vh;
+    width: 100vh;
+    text-align: center; 
+    font-size: 40px;
+    text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
+    
+
+}
 @media only screen and (max-width: 600px) {
     #linebreak-detail{
         width: 200px;
@@ -129,5 +141,11 @@
         width: 200px;
     height: 200px;
     object-fit: contain;
+    }
+    #map-detail{
+        height: 100vh;
+    position: relative;
+    overflow: hidden;
+
     }
 }

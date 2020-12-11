@@ -2,7 +2,6 @@ import React from 'react';
 import './home.css';
 
 import RandomSpot from '../randomSpot/RandomSpot';
-import Maps from '../map/MapTest';
 
 function MainPage() {
   return (
@@ -16,10 +15,7 @@ function MainPage() {
 
           <RandomSpot />
         </div>
-        <div id="maperoni">
-
-          <Maps />
-        </div>
+        <div id="maperoni" />
 
       </section>
 

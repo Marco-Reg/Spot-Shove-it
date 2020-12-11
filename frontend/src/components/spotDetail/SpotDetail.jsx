@@ -4,19 +4,47 @@ import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Maps from '../map/MapTest';
+import {
+
+  GoogleMap, useLoadScript, Marker,
+} from '@react-google-maps/api';
+
 import { requestSpot } from '../../redux/actions/spotActions';
 
 import './spotDetail.css';
+import mapStyles from '../map/mapStyles';
+
+const mapContainerStyle = {
+  width: '80vh',
+  height: '70vh',
+
+};
+
+const center = {
+  lat: 41.385063,
+  lng: 2.14,
+};
+
+const options = {
+  styles: mapStyles,
+  disableDefaultUI: true,
+  zoomControl: true,
+};
 
 function SpotDetail({ spot, dispatch }) {
   const { spotId } = useParams();
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: 'AIzaSyDZ47kWyh51pVo7LVbUloOsUUysWvocKfY',
+    libraries: ['places'],
+  });
 
   useEffect(() => {
     if (!spot || !spot.name) {
       dispatch(requestSpot(spotId));
     }
   }, []);
+  if (loadError) return 'loading Error';
+  if (!isLoaded) return 'loading Maps';
 
   return (
     <>
@@ -43,8 +71,20 @@ function SpotDetail({ spot, dispatch }) {
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>
         </div>
-        <p>Map Spot</p>
-        <Maps />
+        <div>
+          <p id="description-map">Map</p>
+
+          <GoogleMap
+            id="map-detail"
+            mapContainerStyle={mapContainerStyle}
+            options={options}
+            zoom={1}
+            center={center}
+          >
+            <Marker key={spot.time} position={{ lat: spot?.lat, lng: spot?.lng }} />
+
+          </GoogleMap>
+        </div>
 
       </section>
 
