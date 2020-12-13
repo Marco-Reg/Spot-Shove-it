@@ -78,7 +78,7 @@ function SpotDetail({ spot, dispatch }) {
             id="map-detail"
             mapContainerStyle={mapContainerStyle}
             options={options}
-            zoom={1}
+            zoom={12}
             center={center}
           >
             <Marker key={spot.time} position={{ lat: spot?.lat, lng: spot?.lng }} />
