@@ -138,14 +138,21 @@
         margin: 0px;
     }
     #spot-image-one{
-        width: 200px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     object-fit: contain;
     }
+   
+    #description-map{
+        text-transform:uppercase;
+        color:#D16F4D;
+        margin:0;
+        font-size: 30px;
+        width: 100%;
+        
+    
+    }
     #map-detail{
-        height: 100vh;
-    position: relative;
-    overflow: hidden;
 
     }
 }

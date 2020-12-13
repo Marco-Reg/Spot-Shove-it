@@ -7,6 +7,7 @@ import './index.css';
 import Header from './components/header/Header';
 import List from './components/list/List';
 import MainPage from './components/home/MainPage';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" component={MainPage} />
 
       </Switch>
+      <Footer />
 
     </BrowserRouter>
 

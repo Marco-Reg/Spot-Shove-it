@@ -23,7 +23,14 @@ function RandomSpot({ spots, dispatch }) {
           <Link id="random-link" alt="tupu" to={`/spot/${spots[test]?._id}`}>
             <h4 id="random-spot-name">{spots[test]?.spotName}</h4>
             <p id="text-spot">Go and check this random spot</p>
-            <img alt="spot" src={spots[test]?.spotImage[test]} id="image_random" />
+
+            <img
+              alt="spotterini"
+              id="image_random"
+              src={spots[test]?.spotImage[test]?.length === 0
+                ? 'https://github.githubassets.com/images/modules/open_graph/github-mark.png'
+                : spots[test]?.spotImage[test]}
+            />
           </Link>
         </>
         )}

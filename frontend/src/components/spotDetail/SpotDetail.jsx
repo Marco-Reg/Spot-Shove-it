@@ -15,8 +15,8 @@ import './spotDetail.css';
 import mapStyles from '../map/mapStyles';
 
 const mapContainerStyle = {
-  width: '80vh',
-  height: '70vh',
+
+  height: '50vh',
 
 };
 
@@ -71,14 +71,14 @@ function SpotDetail({ spot, dispatch }) {
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>
         </div>
-        <div>
-          <p id="description-map">Map</p>
+        <div id="description-map">
+          <p id="description-map-text">Map</p>
 
           <GoogleMap
             id="map-detail"
             mapContainerStyle={mapContainerStyle}
             options={options}
-            zoom={12}
+            zoom={10}
             center={center}
           >
             <Marker key={spot.time} position={{ lat: spot?.lat, lng: spot?.lng }} />
