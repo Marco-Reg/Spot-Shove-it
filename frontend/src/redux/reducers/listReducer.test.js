@@ -1,6 +1,5 @@
 import reducer from './listReducer';
 import * as actions from '../actions/listActions';
-import { LOAD_SPOTS, LOAD_SPOTS_ERROR } from '../actions/actionTypes';
 
 describe('spot reducer', () => {
   test('should return the initial State', () => {

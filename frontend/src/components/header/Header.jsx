@@ -60,6 +60,12 @@ function Header({ user, dispatch }) {
           </Link>
 
         </div>
+        <div id="home-link">
+          <Link to="/create/" id="homie">
+            <p id="homie">Create</p>
+          </Link>
+
+        </div>
       </div>
 
     </header>
