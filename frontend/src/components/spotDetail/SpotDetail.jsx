@@ -55,7 +55,13 @@ function SpotDetail({ spot, dispatch }) {
         </div>
 
         <div id="linebreak-detail" />
-        <img alt="spot" src={spot?.spotImage[1]} id="spot-image" />
+        <img
+          alt="spotterini"
+          id="image_random"
+          src={spot?.spotImage?.length === 0
+            ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
+            : spot.spotImage[1]}
+        />
 
         <div id="linebreak-detail" />
         <div id="video-description">
@@ -67,7 +73,13 @@ function SpotDetail({ spot, dispatch }) {
         </div>
 
         <div id="linebreak-detail" className="location">
-          <img alt="spot" src={spot?.spotImage[2]} id="spot-image-one" />
+          <img
+            alt="spotterini"
+            id="image_random"
+            src={spot?.spotImage?.length === 0
+              ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
+              : spot?.spotImage[2]}
+          />
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>
         </div>

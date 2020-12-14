@@ -11,7 +11,7 @@
 
 #project-name{
     background-color:#252525;
-    width: 60%;
+    width: 30%;
     border-radius: 5px;
 }
 #cordinates{
@@ -34,6 +34,29 @@
 #submit-form{
     background-color:#252525;
     color:#D16F4D;
+    
+
+}
+#project-location{
+    color:#bbbb;
+    background-color:#252525 ;
+}
+#project-lat{
+    color:#bbbb;
+    background-color:#252525 ;
+    
+}
+#project-lng{
+    color:#bbbb;
+    background-color:#252525 ;
+
+}
+#textarea:focus, input:focus {
+    color: #bbbb;
+}
+#project-main-description{
+    color:#bbbb;
+    background-color:#252525 ;
 
 }
 
@@ -45,7 +68,7 @@
         height: 100vh;
         justify-content: space-evenly;
         background-color:#252525; ;
-        margin-top:20px;
+        margin-top: 70px;
     
     }
 

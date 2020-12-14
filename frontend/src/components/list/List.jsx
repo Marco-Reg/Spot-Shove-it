@@ -32,7 +32,15 @@ function List({ spots, dispatch }) {
                     {' '}
                     {spot.spotStyle}
                   </p>
-                  <img className="main-spot-image" src={spot.spotImage[1]} alt="" />
+
+                  <img
+                    alt="spotterini"
+                    id="image_random"
+                    src={spot.spotImage.length === 0
+                      ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
+                      : spot.spotImage[1]}
+                  />
+
                 </div>
               ))}
             </>

@@ -28,7 +28,7 @@ function RandomSpot({ spots, dispatch }) {
               alt="spotterini"
               id="image_random"
               src={spots[test]?.spotImage[test]?.length === 0
-                ? 'https://github.githubassets.com/images/modules/open_graph/github-mark.png'
+                ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
                 : spots[test]?.spotImage[test]}
             />
           </Link>

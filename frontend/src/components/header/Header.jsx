@@ -33,14 +33,6 @@ function Header({ user, dispatch }) {
       <div id="buttons-link">
 
         <div id="home-link">
-
-          <Link to="/" id="homie">
-            {!user ? <p id="login" onClick={handleLoginClick}>Login</p> : <p id="login" onClick={handleLogoutClick}>Logout</p>}
-
-          </Link>
-
-        </div>
-        <div id="home-link">
           <Link to="/" id="homie">
             <p id="homie">home</p>
           </Link>
@@ -63,6 +55,14 @@ function Header({ user, dispatch }) {
         <div id="home-link">
           <Link to="/create/" id="homie">
             <p id="homie">Create</p>
+          </Link>
+
+        </div>
+        <div id="home-link">
+
+          <Link to="/" id="homie">
+            {!user ? <p id="login" onClick={handleLoginClick}>Login</p> : <p id="login" onClick={handleLogoutClick}>Logout</p>}
+
           </Link>
 
         </div>
