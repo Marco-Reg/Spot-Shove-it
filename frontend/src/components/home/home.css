@@ -5,7 +5,7 @@
     flex-direction: column;
     background-color:#252525;
     width: 100%;
-    height: 100vh;
+   
 }
 #title{
     margin-top:75px;
@@ -39,7 +39,7 @@
     }
     
     #title{
-        margin-top: 200px;
+        margin-top: 75px;
         text-align: center;
         text-transform: uppercase;
         color:#dddd;

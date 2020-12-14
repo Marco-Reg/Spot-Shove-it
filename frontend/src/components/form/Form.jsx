@@ -7,11 +7,11 @@ import './form.css';
 
 // eslint-disable-next-line no-unused-vars
 function Form({ dispatch }) {
-  const [projectName, setProjectName] = useState('');
-  const [projectInfo, setProjectInfo] = useState('');
+  const [spotName, setProjectName] = useState('');
+  const [spotStyle, setProjectInfo] = useState('');
   const [spotLocation, setLocation] = useState('');
-  const [spotLatitud, setLatitud] = useState('');
-  const [spotLongitude, setLongitude] = useState('');
+  const [lat, setLatitud] = useState('');
+  const [lng, setLongitude] = useState('');
   const [photo, setPhoto] = useState('');
 
   return (
@@ -19,11 +19,11 @@ function Form({ dispatch }) {
       <form className="form_wrapper">
         <div id="cordinates">
 
-          <input id="project-name" type="text" value={projectName} onChange={(event) => { setProjectName(event.target.value); }} placeholder="Spot Name" />
+          <input id="project-name" type="text" value={spotName} onChange={(event) => { setProjectName(event.target.value); }} placeholder="Spot Name" />
         </div>
         <div id="cordinates">
 
-          <input id="project-info" type="text" value={projectInfo} onChange={(event) => { setProjectInfo(event.target.value); }} placeholder="Description" />
+          <input id="project-info" type="text" value={spotStyle} onChange={(event) => { setProjectInfo(event.target.value); }} placeholder="Style" />
         </div>
         <div id="cordinates">
 
@@ -34,13 +34,23 @@ function Form({ dispatch }) {
           <input id="project-photo" type="text" value={photo} onChange={(event) => { setPhoto(event.target.value); }} placeholder="photo url" />
         </div>
         <div id="cordinates">
-          <input id="project-info" type="text" value={spotLatitud} onChange={(event) => { setLatitud(event.target.value); }} placeholder="latitude" />
-          <input id="project-info" type="text" value={spotLongitude} onChange={(event) => { setLongitude(event.target.value); }} placeholder="Longitude" />
+          <input id="project-info" type="text" value={lat} onChange={(event) => { setLatitud(event.target.value); }} placeholder="latitude" />
+          <input id="project-info" type="text" value={lng} onChange={(event) => { setLongitude(event.target.value); }} placeholder="Longitude" />
 
         </div>
         <div id="cordinates">
 
-          <button type="submit" id="submit-form" onClick={() => { dispatch(createProject({ projectName, projectInfo, photo })); }}>SUBMIT</button>
+          <button
+            type="submit"
+            id="submit-form"
+            onClick={() => {
+              dispatch(createProject({
+                spotName, spotStyle, spotLocation, lat, lng,
+              }));
+            }}
+          >
+            SUBMIT
+          </button>
         </div>
       </form>
 

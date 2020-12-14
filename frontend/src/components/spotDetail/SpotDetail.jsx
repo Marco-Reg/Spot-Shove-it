@@ -81,7 +81,7 @@ function SpotDetail({ spot, dispatch }) {
             zoom={10}
             center={center}
           >
-            <Marker key={spot.time} position={{ lat: spot?.lat, lng: spot?.lng }} />
+            <Marker key="lalala" position={{ lat: spot?.lat, lng: spot?.lng }} />
 
           </GoogleMap>
         </div>
