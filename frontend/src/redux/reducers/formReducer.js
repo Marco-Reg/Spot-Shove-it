@@ -2,7 +2,7 @@
 /* eslint-disable no-case-declarations */
 import actionTypes from '../actions/actionTypes';
 
-export default function formReducer(state = {}, action) {
+export default function formReducer(state = {}, action = {}) {
   let newState = null;
   switch (action.type) {
     case actionTypes.CREATE_PROJECT:

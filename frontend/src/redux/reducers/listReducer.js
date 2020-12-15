@@ -1,7 +1,7 @@
 /* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
-export default function listReducer(state = {}, action) {
+export default function listReducer(state = {}, action = {}) {
   let newState = null;
 
   switch (action.type) {
