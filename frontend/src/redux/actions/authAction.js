@@ -30,6 +30,7 @@ export function loginUserWithGoogle() {
 
       dispatch(loginGoogleSuccess(checkUser.data));
     } catch (loginError) {
+      console.log(loginError);
       dispatch(LoginGoogleError(loginError));
     }
   };

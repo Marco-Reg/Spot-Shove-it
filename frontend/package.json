@@ -66,7 +66,8 @@
       "!src/App.jsx",
       "!src/reportWebVitals.js",
       "!src/components/map/MapTest.jsx",
-      "!src/components/map/Map.jsx"
+      "!src/components/map/Map.jsx",
+      "!src/firebase/firebaseMethod.js"
     ]
   }
 }
