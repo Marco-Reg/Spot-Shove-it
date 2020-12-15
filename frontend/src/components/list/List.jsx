@@ -16,7 +16,7 @@ function List({ spots, dispatch }) {
     <>
       <section className="list_wrapper">
         {spots
-            && spots.length >= 0
+            && spots.length > 0
             && (
             <>
               {spots.map((spot) => (

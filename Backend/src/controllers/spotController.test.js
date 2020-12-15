@@ -5,24 +5,26 @@ describe('spotController', () => {
     const res = {
       send: jest.fn(),
     };
+    const req = { params: { spotId: {} } };
     const spot = {
-      findOneById: jest.fn().mockImplementationOnce((query, callback) => {
-        callback(true, {});
+      findById: jest.fn().mockImplementationOnce((query, callback) => {
+        callback(true, false);
       }),
     };
-    spotController(spot).getMethod({ user: null }, res);
+    spotController(spot).getMethod(req, res);
     expect(res.send).toHaveBeenCalled();
   });
   test('Should call a response on getMethod', () => {
     const res = {
       send: jest.fn(),
     };
+    const req = { params: { spotId: {} } };
     const spot = {
-      find: jest.fn().mockImplementationOnce((query, callback) => {
+      findById: jest.fn().mockImplementation((query, callback) => {
         callback(false, {});
       }),
     };
-    spotController(spot).getMethod({ spot: null }, res);
+    spotController(spot).getMethod(req, res);
     expect(res.send).toHaveBeenCalled();
   });
 });
