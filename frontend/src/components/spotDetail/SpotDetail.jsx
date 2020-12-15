@@ -4,18 +4,47 @@ import React, { useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import {
+
+  GoogleMap, useLoadScript, Marker,
+} from '@react-google-maps/api';
+
 import { requestSpot } from '../../redux/actions/spotActions';
 
 import './spotDetail.css';
+import mapStyles from '../map/mapStyles';
+
+const mapContainerStyle = {
+
+  height: '50vh',
+
+};
+
+const center = {
+  lat: 41.385063,
+  lng: 2.14,
+};
+
+const options = {
+  styles: mapStyles,
+  disableDefaultUI: true,
+  zoomControl: true,
+};
 
 function SpotDetail({ spot, dispatch }) {
   const { spotId } = useParams();
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: 'AIzaSyDZ47kWyh51pVo7LVbUloOsUUysWvocKfY',
+    libraries: ['places'],
+  });
 
   useEffect(() => {
     if (!spot || !spot.name) {
       dispatch(requestSpot(spotId));
     }
   }, []);
+  if (loadError) return 'loading Error';
+  if (!isLoaded) return 'loading Maps';
 
   return (
     <>
@@ -26,7 +55,13 @@ function SpotDetail({ spot, dispatch }) {
         </div>
 
         <div id="linebreak-detail" />
-        <img alt="spot" src={spot?.spotImage[1]} id="spot-image" />
+        <img
+          alt="spotterini"
+          id="image_random"
+          src={spot?.spotImage?.length === 0
+            ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
+            : spot.spotImage[1]}
+        />
 
         <div id="linebreak-detail" />
         <div id="video-description">
@@ -38,9 +73,29 @@ function SpotDetail({ spot, dispatch }) {
         </div>
 
         <div id="linebreak-detail" className="location">
-          <img alt="spot" src={spot?.spotImage[2]} id="spot-image-one" />
+          <img
+            alt="spotterini"
+            id="image_random"
+            src={spot?.spotImage?.length === 0
+              ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
+              : spot?.spotImage[2]}
+          />
           <div className="linebreak-vertical" />
           <p id="spot-location">{spot?.spotLocation}</p>
+        </div>
+        <div id="description-map">
+          <p id="description-map-text">Map</p>
+
+          <GoogleMap
+            id="map-detail"
+            mapContainerStyle={mapContainerStyle}
+            options={options}
+            zoom={10}
+            center={center}
+          >
+            <Marker key="lalala" position={{ lat: spot?.lat, lng: spot?.lng }} />
+
+          </GoogleMap>
         </div>
 
       </section>

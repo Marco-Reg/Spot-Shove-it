@@ -91,6 +91,18 @@
 .location{
     display: flex;
 }
+#description-map{
+    text-align: center;
+    margin-top: 50px;
+    color:#D16F4D;
+    width: 60vh;
+    width: 100vh;
+    text-align: center; 
+    font-size: 40px;
+    text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
+    
+
+}
 @media only screen and (max-width: 600px) {
     #linebreak-detail{
         width: 200px;
@@ -126,8 +138,21 @@
         margin: 0px;
     }
     #spot-image-one{
-        width: 200px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     object-fit: contain;
+    }
+   
+    #description-map{
+        text-transform:uppercase;
+        color:#D16F4D;
+        margin:0;
+        font-size: 30px;
+        width: 100%;
+        
+    
+    }
+    #map-detail{
+
     }
 }

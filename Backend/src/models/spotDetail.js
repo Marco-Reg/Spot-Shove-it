@@ -10,5 +10,8 @@ const spotDetailSchema = new Schema({
   spotBestVideo: { type: String },
   spotRating: [Number],
   spotLocation: { type: String },
+  lat: { type: Number },
+  lng: { type: Number },
+
 });
 module.exports = model('spot', spotDetailSchema);

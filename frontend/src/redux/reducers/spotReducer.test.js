@@ -1,7 +1,7 @@
-import listReducer from './listReducer';
+import spotReducer from './spotReducer';
 import actionTypes from '../actions/actionTypes';
 
-describe('listReducer', () => {
+describe('spotReducer', () => {
   let initialState;
 
   beforeEach(() => {
@@ -13,26 +13,26 @@ describe('listReducer', () => {
   });
 
   test('should return the initial State', () => {
-    const result = listReducer(undefined, {});
+    const result = spotReducer(undefined, {});
     expect(result).toEqual({});
   });
 
   test('should load spot when action dispatch', () => {
-    const requestSpots = {
-      type: actionTypes.LOAD_SPOTS,
-      spots: undefined,
+    const requestSpot = {
+      type: actionTypes.LOAD_SPOT,
+      spot: 'macba',
     };
 
-    const result = listReducer(initialState, requestSpots);
+    const result = spotReducer(initialState, requestSpot);
 
-    expect(result).toEqual({ spots: undefined });
+    expect(result).toEqual({ spot: 'macba' });
   });
   test('should send error  loading spots', () => {
-    const requestSpotsError = {
-      type: actionTypes.LOAD_SPOTS_ERROR,
+    const requestSpotError = {
+      type: actionTypes.LOAD_SPOT_ERROR,
       error: 'error',
     };
-    const result = listReducer(initialState, requestSpotsError);
+    const result = spotReducer(initialState, requestSpotError);
     expect(result).toEqual({ error: 'error' });
   });
 });

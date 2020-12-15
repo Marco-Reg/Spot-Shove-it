@@ -3,8 +3,8 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-
 import { Link } from 'react-router-dom';
+
 import { requestListSpots } from '../../redux/actions/listActions';
 import './list.css';
 
@@ -32,11 +32,20 @@ function List({ spots, dispatch }) {
                     {' '}
                     {spot.spotStyle}
                   </p>
-                  <img className="main-spot-image" src={spot.spotImage[1]} alt="" />
+
+                  <img
+                    alt="spotterini"
+                    id="image_random"
+                    src={spot.spotImage.length === 0
+                      ? 'https://cdn.discordapp.com/attachments/631186181610143771/777141944320131112/ShoveItAnimation.gif'
+                      : spot.spotImage[1]}
+                  />
+
                 </div>
               ))}
             </>
             )}
+
       </section>
 
     </>
