@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import {
   // eslint-disable-next-line no-unused-vars
-  GoogleMap, useLoadScript, Marker, InfoWindow,
+  GoogleMap, useLoadScript, Marker,
 } from '@react-google-maps/api';
 import './mapTest.css';
 import mapStyles from './mapStyles';

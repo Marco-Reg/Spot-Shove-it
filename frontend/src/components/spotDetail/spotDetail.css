@@ -83,7 +83,6 @@
     color: #BBBBBB;
     width: 60vh;
     width: 100vh;
-    text-align: center; 
     font-size: 23px;
     text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
     display:flex;
@@ -97,7 +96,6 @@
     color:#D16F4D;
     width: 60vh;
     width: 100vh;
-    text-align: center; 
     font-size: 40px;
     text-shadow: 5px -3px 15px 5px rgba(0,0,0,0.55);
     
@@ -152,7 +150,5 @@
         
     
     }
-    #map-detail{
-
-    }
+    
 }

@@ -5,48 +5,52 @@ describe('userController', () => {
     const res = {
       send: jest.fn(),
     };
+    const req = { params: { userId: {} } };
     const user = {
-      find: jest.fn().mockImplementationOnce((query, callback) => {
-        callback(true, {});
+      findById: jest.fn().mockImplementationOnce((query, callback) => {
+        callback(true, false);
       }),
     };
-    usersController(user).getMethod({ user: null }, res);
+    usersController(user).getMethod(req, res);
     expect(res.send).toHaveBeenCalled();
   });
   test('Should call a response on getMethod', () => {
     const res = {
       send: jest.fn(),
     };
+    const req = { params: { userId: {} } };
     const user = {
-      find: jest.fn().mockImplementationOnce((query, callback) => {
+      findById: jest.fn().mockImplementationOnce((query, callback) => {
         callback(false, {});
       }),
     };
-    usersController(user).getMethod({ user: null }, res);
+    usersController(user).getMethod(req, res);
     expect(res.send).toHaveBeenCalled();
   });
   test('should call a response on putMethod', () => {
     const res = {
-      send: jest.fn(),
+      json: jest.fn(),
     };
+    const req = { body: { user: { email: 'dasd' } } };
+
     const user = {
-      create: jest.fn().mockImplementationOnce((query, callback) => {
-        callback(true, {});
+      findOne: jest.fn().mockImplementationOnce((query, callback) => {
+        callback(false, {});
       }),
     };
-    usersController(user).putMethod({}, res);
-    expect(res.send).toHaveBeenCalled();
+    usersController(user).putMethod(req, res);
+    expect(res).toHaveBeenCalled();
   });
   test('should call a response on putMethod', () => {
     const res = {
       send: jest.fn(),
     };
-    const body = {
-      create: jest.fn().mockImplementationOnce((user, callback) => {
+    const email = {
+      create: jest.fn().mockImplementationOnce(({ body: { user } }, callback) => {
         callback(true, {});
       }),
     };
-    usersController(body).putMethod({}, res);
+    usersController(email).putMethod({}, res);
     expect(res.send).toHaveBeenCalled();
   });
 });

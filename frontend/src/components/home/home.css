@@ -51,11 +51,9 @@
         color:#dddd;
         
     }
+    
     #random-spot{
         background-color:#252525;
-        
-    }
-    #random-spot{
         display: flex;
         flex-direction: column;
         align-items: center;
