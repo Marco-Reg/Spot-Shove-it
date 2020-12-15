@@ -41,12 +41,12 @@ describe('userController', () => {
     const res = {
       send: jest.fn(),
     };
-    const user = {
-      create: jest.fn().mockImplementationOnce((query, callback) => {
-        callback(false, {});
+    const body = {
+      create: jest.fn().mockImplementationOnce((user, callback) => {
+        callback(true, {});
       }),
     };
-    usersController(user).putMethod({}, res);
+    usersController(body).putMethod({}, res);
     expect(res.send).toHaveBeenCalled();
   });
 });

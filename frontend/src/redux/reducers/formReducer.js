@@ -9,10 +9,6 @@ export default function formReducer(state = {}, action) {
 
       newState = { ...state, info: action.newProject };
       break;
-    case actionTypes.DELETE_PROJECT:
-      const newList = state.list.filter((item) => item._id !== action.listItem.projects._id);
-      newState = { ...state, list: newList };
-      break;
 
     default:
       newState = state;

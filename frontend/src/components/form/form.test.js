@@ -8,9 +8,9 @@ import thunk from 'redux-thunk';
 import configureStore from 'redux-mock-store';
 import { Simulate } from 'react-dom/test-utils';
 import Form from './Form';
-import { createProject } from '../../redux/actions/formAction';
+import * as formAction from '../../redux/actions/formAction';
 
-jest.mock('../../redux/actions/ListActions');
+jest.mock('../../redux/actions/formAction');
 
 const buildStore = configureStore([thunk]);
 
@@ -43,10 +43,10 @@ describe('Forms testing', () => {
   test('should dispatch on click call the function dispatch', () => {
     const initialState = {};
     wrapper = wrapperFactory(initialState);
-
+    formAction.createProject = jest.fn();
     render(<Form />, { wrapper });
     document.getElementById('submit-form').click();
-    expect(createProject).toHaveBeenCalled();
+    expect(formAction.createProject).toHaveBeenCalled();
   });
   test('should input change value on projectName', () => {
     const initialState = {};

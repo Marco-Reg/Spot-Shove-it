@@ -1,14 +1,56 @@
-import reducer from './authReducer';
-import * as actions from '../actions/listActions';
+import authReducer from './authReducer';
+import actionTypes from '../actions/actionTypes';
 
-describe('spot reducer', () => {
-  test('should return the initial State', () => {
-    expect(reducer(undefined, {})).toEqual({});
+describe('UserReducer', () => {
+  let initialState;
+
+  beforeEach(() => {
+    initialState = {};
   });
-  test('should handle LOAD_SPOTS', () => {
-    const startAction = {
-      type: actions.LOAD_SPOTS,
+
+  afterEach(() => {
+    initialState = null;
+  });
+
+  test('should return the initial State', () => {
+    const result = authReducer(undefined, {});
+    expect(result).toEqual({});
+  });
+
+  test('should add the auth user to initial State', () => {
+    const loginUserFireBase = {
+      type: actionTypes.LOGIN_USER_GOOGLE,
+      user: 'user',
     };
-    expect(reducer({}, startAction)).toEqual({});
+
+    const result = authReducer(initialState, loginUserFireBase);
+
+    expect(result).toEqual({ user: 'user' });
+  });
+  test('should add the auth login error when there is a fail', () => {
+    const loginUserFireBase = {
+      type: actionTypes.LOGIN_ERROR,
+      loginError: 'error',
+    };
+
+    const result = authReducer(initialState, loginUserFireBase);
+
+    expect(result).toEqual({ loginError: 'error' });
+  });
+  test('should logOut the user and return to initial state ', () => {
+    const logOutUserFireBaseError = {
+      type: actionTypes.SIGNOUT_SUCCESS,
+    };
+
+    const result = authReducer(initialState, logOutUserFireBaseError);
+    expect(result).toEqual({ user: null });
+  });
+  test('should send signout error', () => {
+    const logOutUserFireBaseError = {
+      type: actionTypes.SIGNOUT_ERROR,
+      signOutError: undefined,
+    };
+    const result = authReducer(initialState, logOutUserFireBaseError);
+    expect(result).toEqual({ signOutError: undefined });
   });
 });

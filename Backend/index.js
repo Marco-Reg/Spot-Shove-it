@@ -9,6 +9,7 @@ const spotDetailRoutes = require('./src/models/spotDetail');
 const spotRoutes = require('./src/routes/spotRoutes')(spotDetailRoutes);
 const listItems = require('./src/models/spotDetail');
 const listRoutes = require('./src/routes/listRoutes')(listItems);
+const formRoutes = require('./src/routes/formRoutes')(listItems);
 
 const app = express();
 app.use(cors());
@@ -23,6 +24,7 @@ connect(database);
 app.use('/user', userRoutes);
 app.use('/spot', spotRoutes);
 app.use('/spots', listRoutes);
+app.use('/form', formRoutes);
 
 app.listen(port, () => {
   console.log(`server is running on por ${port}`);

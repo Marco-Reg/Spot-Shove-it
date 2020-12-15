@@ -1,14 +1,38 @@
-import reducer from './spotReducer';
-import * as actions from '../actions/listActions';
+import spotReducer from './spotReducer';
+import actionTypes from '../actions/actionTypes';
 
-describe('spot reducer', () => {
-  test('should return the initial State', () => {
-    expect(reducer(undefined, {})).toEqual({});
+describe('spotReducer', () => {
+  let initialState;
+
+  beforeEach(() => {
+    initialState = {};
   });
-  test('should handle LOAD_SPOTS', () => {
-    const startAction = {
-      type: actions.LOAD_SPOTS,
+
+  afterEach(() => {
+    initialState = null;
+  });
+
+  test('should return the initial State', () => {
+    const result = spotReducer(undefined, {});
+    expect(result).toEqual({});
+  });
+
+  test('should load spot when action dispatch', () => {
+    const requestSpot = {
+      type: actionTypes.LOAD_SPOT,
+      spot: 'macba',
     };
-    expect(reducer({}, startAction)).toEqual({});
+
+    const result = spotReducer(initialState, requestSpot);
+
+    expect(result).toEqual({ spot: 'macba' });
+  });
+  test('should send error  loading spots', () => {
+    const requestSpotError = {
+      type: actionTypes.LOAD_SPOT_ERROR,
+      error: 'error',
+    };
+    const result = spotReducer(initialState, requestSpotError);
+    expect(result).toEqual({ error: 'error' });
   });
 });

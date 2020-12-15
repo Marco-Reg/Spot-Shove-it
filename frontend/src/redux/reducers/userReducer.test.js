@@ -1,14 +1,40 @@
-import reducer from './userReducer';
-import * as actions from '../actions/listActions';
+import userReducer from './userReducer';
+import actionTypes from '../actions/actionTypes';
 
-describe('spot reducer', () => {
-  test('should return the initial State', () => {
-    expect(reducer(undefined, {})).toEqual({});
+describe('UserReducer', () => {
+  let initialState;
+
+  beforeEach(() => {
+    initialState = {};
   });
-  test('should handle LOAD_SPOTS', () => {
-    const startAction = {
-      type: actions.LOAD_SPOTS,
+
+  afterEach(() => {
+    initialState = null;
+  });
+
+  test('should return the initial State', () => {
+    const result = userReducer(undefined, {});
+    expect(result).toEqual({});
+  });
+
+  test('should add the auth user to initial State', () => {
+    const loginUserFireBase = {
+      type: actionTypes.LOAD_USER,
+      user: 'user',
     };
-    expect(reducer({}, startAction)).toEqual({});
+
+    const result = userReducer(initialState, loginUserFireBase);
+
+    expect(result).toEqual({ user: 'user' });
+  });
+  test('should add the auth user to initial State', () => {
+    const loginUserFireBase = {
+      type: actionTypes.LOAD_USER_ERROR,
+      error: 'error',
+    };
+
+    const result = userReducer(initialState, loginUserFireBase);
+
+    expect(result).toEqual({ error: 'error' });
   });
 });
