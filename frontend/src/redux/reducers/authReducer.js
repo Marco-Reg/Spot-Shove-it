@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 
-export default function authReducer(state = {}, action) {
+export default function authReducer(state = {}, action = {}) {
   let newState = null;
   switch (action.type) {
     case actionTypes.LOGIN_USER_GOOGLE:

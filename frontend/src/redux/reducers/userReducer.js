@@ -1,7 +1,7 @@
 /* eslint-disable no-debugger */
 import actionTypes from '../actions/actionTypes';
 
-export default function userReducer(state = {}, action) {
+export default function userReducer(state = {}, action = {}) {
   let newState = null;
   switch (action.type) {
     case actionTypes.LOAD_USER:

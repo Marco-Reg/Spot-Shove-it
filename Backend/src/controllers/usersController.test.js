@@ -46,7 +46,7 @@ describe('userController', () => {
       send: jest.fn(),
     };
     const email = {
-      create: jest.fn().mockImplementationOnce(({ body: { user } }, callback) => {
+      create: jest.fn().mockImplementationOnce((query, callback) => {
         callback(true, {});
       }),
     };
