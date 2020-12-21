@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
