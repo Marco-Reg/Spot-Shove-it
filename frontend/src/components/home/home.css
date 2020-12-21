@@ -28,7 +28,15 @@
     align-items: center;
     color:#dddd;
 }
+#pis{
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    color:#dddd;
+    
 
+
+}
 @media only screen and (max-width: 600px){
 
     #top-part{
